@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --card: 0 0% 98%;
+    --input: 0 0% 96%;
+    --text: 0 0% 9%;
+    --text-secondary: 0 0% 40%;
+  }
+
+  .dark {
+    --background: 222 35% 6%;
+    --card: 222 35% 8%;
+    --input: 222 35% 12%;
+    --text: 0 0% 100%;
+    --text-secondary: 0 0% 70%;
+  }
+}
+
+body {
+  @apply bg-[hsl(var(--background))] text-[hsl(var(--text))] transition-colors duration-300;
+}
+
+.card {
+  @apply bg-[hsl(var(--card))] border border-white/[0.05] rounded-2xl backdrop-blur-xl;
+}
+
+.input-themed {
+  @apply bg-[hsl(var(--input))] border border-white/[0.1] text-[hsl(var(--text))] 
+         placeholder:text-[hsl(var(--text-secondary))];
+}
+
+.scrape-button {
+  @apply bg-primary hover:bg-primary/90 transition-colors duration-200;
+}
